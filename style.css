@@ -1,0 +1,402 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+text-decoration: none;
+outline: none;
+}
+
+*{
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* cabeçalho fixo */
+.menu {
+  background: #123740;
+  width: 100%;
+  height: 37px;
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+/* menu retrail lateral */
+body {
+  background-color: black;
+  overflow-X: hidden;
+}
+
+header {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#check {
+  display: none;
+}
+
+#icone {
+  cursor: pointer;
+  padding: 32px;
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+}
+
+.barra {
+  background-color: #D9D271;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  transition: all .2s linear;
+  left: -250px;
+}
+
+.menu-text {
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  padding-top: 15px;
+}
+
+.menu-text a {
+  text-decoration: none;
+}
+
+.Link {
+  background-color: #D9D271;
+  padding: 25px;
+  font-size: 15pt;
+  font-weight: bolder;
+  transition: all .3s linear;
+  color: #123740;
+  border-bottom: 3px solid #C1D9B0;
+  opacity: 0;
+}
+
+.Link:hover {
+  background-color: #123740;
+  color: #C1D9B0;
+}
+
+#check:checked~.barra {
+  transform: translateX(250px);
+}
+
+#check:checked~.barra nav a .Link {
+  opacity: 1;
+  transition-delay: .3s;
+}
+
+#banner1 {
+  padding-top: 97px;
+  width: 100%;
+}
+
+.mburg {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+}
+
+.hamburguer {
+  position: relative;
+  display: block;
+  background: #D9D271;
+  width: 30px;
+  height: 3px;
+  top: 29px;
+  left: 15px;
+  transition: .5s ease-in-out;
+}
+
+.hamburguer:before,
+.hamburguer:after {
+  background: #D9D271;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: .5s ease-in-out;
+}
+
+.hamburguer:before {
+  top: -10px;
+}
+
+.hamburguer:after {
+  bottom: -10px;
+}
+
+.header-input {
+  display: none;
+}
+
+input:checked~label .hamburguer {
+  transform: rotate(45deg);
+}
+
+input:checked~label .hamburguer:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+input:checked~label .hamburguer:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+.banner {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-logo {
+    width: 65%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filme {
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(18,55,64,1) 50%, rgba(18,55,64,1) 100%);
+    position: relative;
+    color: #D9D271;
+    padding: 10px;
+    top: 40px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #D9D271;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1);
+}
+
+.filme:hover {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(18,55,64,1) 50%, rgba(0,0,0,1) 100%);
+    transform: scale(1.1);
+}
+
+.title-container {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  margin-top: 85px;
+}
+
+.title-p {
+  background-color: #123740;
+  color: #D9D271;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #D9D271;
+}
+
+.ordenar{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+input:focus, select:focus {
+  outline: 0;
+}
+
+.ordenar select {
+  list-style: none;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: space-around;
+  background-color: #123740;
+  align-items: center;
+  color: #D9D271;
+  font-weight: bolder;
+  cursor: pointer;
+  width: auto;
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #D9D271;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.background-filme {
+  background-image: url(./4k\ Studio\ Ghibli\ Wallpapers.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+  z-index: -1;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #123740;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.footer-text {
+    font-weight: lighter;
+    text-align: center;
+    font-size: 15px;
+    color: #C1D9B0;
+    margin: 0;
+}
+
+/* para tablet */
+@media screen and (min-width: 768px) {
+  .image-logo {
+      width: 75%;
+  }
+
+  .filme {
+    padding: 10px;
+    top: 50px;
+    width: 300px;
+    font-size: 20px;
+  }
+
+  .title-container {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    width: 350px;
+    margin-top: 85px;
+  }
+
+  .title-p {
+    padding: 10px;
+    font-size: 25px;
+  }
+
+  .ordenar{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .ordenar select {
+    font-size: 20px;
+  }
+}
+
+/* para desktop */
+@media screen and (min-width: 1024px) {
+  .menu {
+    width: 100%;
+    height: 50px;
+  }
+
+  .image-logo {
+    width: 50%;
+  }
+
+  .filme {
+    padding: 15px;
+    top: 70px;
+    width: 350px;
+    font-size: 25px;
+  }
+
+  .title-container {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    width: 400px;
+    margin-top: 100px;
+  }
+
+  .title-p {
+    padding: 10px;
+    font-size: 25px;
+  }
+
+  .ordenar{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .ordenar select {
+    font-size: 20px;
+  }
+}
+
